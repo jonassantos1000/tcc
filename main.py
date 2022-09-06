@@ -1,9 +1,9 @@
 from time import sleep
 import nmap
 import nvdlib
-from host import Host
-from port import Port
-from cve import *
+from model.host import Host
+from model.port import Port
+from model.cve import *
 
 
 class Scanner:
