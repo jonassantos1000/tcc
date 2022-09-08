@@ -1,0 +1,36 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+footer{
+    background-color: #536c8d;
+}
+
+.logo {
+    height: 45px;
+    width: 45px;
+}
+
+.card-img{
+    height: 150px;
+    width: 317px;
+}
+
+.navbar{
+    background-color: #084598;
+}
+
+.nav-link{
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.elementToFadeInAndOut {
+    animation: fade 1s;
+}
+
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
