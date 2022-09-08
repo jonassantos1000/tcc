@@ -31,7 +31,7 @@ function getValueSearchBar(){
 }
 
 function getCVE(){
-    fetch(`http://localhost:5000/vistoria/${getValueSearchBar()}`)
+    fetch(`http://192.168.1.220:5000/vistoria/${getValueSearchBar()}`)
     .then(response => {
         if(response.ok){
             response.json().then((response) => {
