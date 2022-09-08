@@ -45,7 +45,7 @@ class Scanner:
 
     def find_info_cve(self, cve):
         try:
-            if str(cve).find('CVE') != -1:
+            if str(cve).upper().find('CVE') != -1:
                 return nvdlib.getCVE(cve)
         except Exception as error:
             return False
@@ -105,9 +105,9 @@ class Scanner:
         return host
 
 
-scan = Scanner('192.168.1.0/24')
-hosts = scan.vulnerabilitie_network()
-
-for host in hosts:
-     for port in host.port:
-        print(f'ip:{host.ip} / hostname: {host.hostname} portas: {port.dict()}')
+# scan = Scanner('192.168.1.0/24')
+# hosts = scan.vulnerabilitie_network()
+#
+# for host in hosts:
+#      for port in host.port:
+#         print(f'ip:{host.ip} / hostname: {host.hostname} portas: {port.dict()}')

@@ -1,4 +1,4 @@
-from score import Score
+from model.score import Score
 
 class CVE:
     def __init__(self, id=None, resume=None, reference=[], score=None):

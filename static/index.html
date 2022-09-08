@@ -12,14 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="http://areaaperta.com/nicescroll/js/jquery.nicescroll.min.js"></script>
 </head>
 
 <body>
-    <div class="d-flex vh-100 flex-column">
+    <div class="d-flex vh-100 flex-column div_root">
         <header>
-            <nav class="navbar navbar-expand-lg shadow-sm p-1 mb-1 rounded">
+            <nav class="navbar navbar-expand-lg shadow-sm p-1 mb-1 rounded menu">
                 <div class="container">
                     <a class="navbar-brand  col-2" href="#"><img class="logo" src="./assets/img/logo.png"
                             alt="Logo do site"></a>
@@ -44,25 +42,30 @@
             <div class="d-flex flex-column shadow-sm p-1 mb-5 bg-body rounded h-100">
                 <div class="h-50 d-flex flex-column justify-content-center">
                     <div class="d-flex flex-column align-items-center mb-2">
-                        <div class="d-flex flex-column w-50">
+                        <div class="d-fixed flex-column w-50">
                             <h1 class="text-center mb-4 fs-2">Consulta de CVE</h1>
                             <div class="d-flex justify-content-center">
-                                <input class="form-control me-2 w-50" type="search" placeholder="Exemplo: CVE-2022-2153"
+                                <input id="barra_pesquisa_cve" class="form-control me-2 w-50" type="search" placeholder="Exemplo: CVE-2022-2153"
                                     aria-label="pesquisar">
-                                <button class="btn btn-primary me-2" onclick="pesquisarCVE()">Pesquisar</button>
+                                <button class="btn btn-primary me-2" onclick="getCVE()">Pesquisar</button>
                                 
                             </div>
                         </div>
 
-                        <div class="d-none justify-content-center col-7 elementToFadeInAndOut p-1" id="cve">
+                        <div class="d-flex justify-content-center col-7 elementToFadeInAndOut p-1" id="cve">
                             <div class="jumbotron text-justify p-1 col-12">
                                 <div class="alert alert-primary">
-                                    <h3 class="fs-5">CVE-2022-2153</h3>
-                                    <p class="lead fs-6">A flaw was found in the Linux kernel’s KVM when attempting to set a
-                                        SynIC IRQ. This issue makes it possible for a misbehaving VMM to write to
-                                        SYNIC/STIMER MSRs, causing a NULL pointer dereference. This flaw allows an
-                                        unprivileged local attacker on the host to issue specific ioctl calls, causing a
-                                        kernel oops condition that results in a denial of service.</p>
+                                    <h3 class="fs-5" id="titulo_cve">CVE-2022-2153</h3>
+                                    <p class="lead fs-6" id="resumo_cve">A flaw was found in the Linux kernel’s KVM when attempting to set a SynIC IRQ. This issue makes it possible for a misbehaving VMM to write to SYNIC/STIMER MSRs, causing a NULL pointer dereference. This flaw allows an unprivileged local attacker on the host to issue specific ioctl calls, causing a kernel oops condition that results in a denial of service.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="div_erro" class="d-none justify-content-center col-7 elementToFadeInAndOut p-1" >
+                            <div class="jumbotron text-justify p-1 col-12">
+                                <div class="alert alert-danger">
+                                    <h3 class="fs-5" id="titulo_erro"></h3>
+                                    <p class="lead fs-6" id="resumo_erro"></p>
                                 </div>
                             </div>
                         </div>

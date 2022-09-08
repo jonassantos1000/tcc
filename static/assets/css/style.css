@@ -1,9 +1,21 @@
 html {
     scroll-behavior: smooth;
-  }
+}
+.div_root{
+    padding-top: 120px;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
 
 footer{
     background-color: #536c8d;
+    width: 100%;
 }
 
 .logo {

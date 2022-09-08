@@ -1,4 +1,4 @@
-from port import Port
+from model.port import Port
 
 class Host:
     def __init__(self, hostname, ip, port):
