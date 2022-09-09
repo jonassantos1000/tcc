@@ -1,3 +1,7 @@
+body{
+    min-height: 100vh;
+}
+
 .card-img{
     height: 150px;
     width: 317px;
@@ -5,12 +9,14 @@
 
 .div-superior{
     padding-top: 80px;
-    min-height: 100px;
-    min-width: 500px
+    min-height: 200px;
+    min-width: 400px;
+    flex-grow: 1;
 }
 
 .div_root{
     font-family: 'Lato', sans-serif;
+    font-weight: 20px;
 }
 
 .elementToFadeInAndOut {
@@ -23,6 +29,22 @@ footer{
 
 html {
     scroll-behavior: smooth;
+}
+
+#loading {
+    padding-top: 10px;
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #084598;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+
+#loading.display {
+    visibility: visible;
 }
 
 .logo {
@@ -49,4 +71,13 @@ html {
 @keyframes fade {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
