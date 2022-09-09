@@ -18,18 +18,18 @@
     <div class="d-flex vh-100 flex-column div_root">
         <header>
             <nav class="navbar navbar-expand-lg shadow-sm p-1 mb-1 rounded menu">
-                <div class="container">
-                    <a class="navbar-brand" href="#"><img class="logo" src="./assets/img/logo.png"
+                <div class="container d-flex">
+                    <a class="d-flex col-1 navbar-brand align-items-center" href="#"><img class="logo" src="./assets/img/logo.png"
                             alt="Logo do site"></a>
-                    <div class="collapse col-11 navbar-collapse d-flex justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav col-10 justify-content-center">
-                            <li class="nav-item ps-5">
+                    <div class="d-flex h-100 align-items-center justify-content-center  col-9 col-sm-9 col-md-11" id="navbarNav">
+                        <ul class="d-flex h-100 pt-2 list-unstyled col-11 col-md-12 align-items-center" id="lista_nav">
+                            <li class="nav-item ps-4">
                                 <a class="nav-link" href="/">Inicio</a>
                             </li>
-                            <li class="nav-item ps-5">
+                            <li class="nav-item ps-4">
                                 <a class="nav-link" href="#">Vistoria</a>
                             </li>
-                            <li class="nav-item ps-5">
+                            <li class="nav-item ps-4">
                                 <a class="nav-link" href="#">Sobre</a>
                             </li>
                         </ul>
@@ -39,15 +39,15 @@
         </header>
 
         <main class="d-flex flex-column flex-grow-1 container">
-            <div class="d-flex flex-column shadow-sm p-1 mb-5 bg-body rounded h-100">
+            <div class="d-flex flex-column shadow-sm p-1 mb-5 bg-body rounded h-100" id="sub_div_principal">
                 <div class="h-100 d-flex flex-column justify-content-center">
                     <div class="d-flex flex-column align-items-center mb-2">
                         <div class="d-flex flex-column div-superior pb-2">
                             <h1 class="text-center mb-4 fs-2 fw-bold">Consulta de CVE</h1>
-                            <div class="d-flex justify-content-center">
-                                <input id="barra_pesquisa_cve" class="form-control me-2 w-100" type="search" placeholder="Exemplo: CVE-2022-2153"
+                            <div class="d-flex justify-content-center" id="botoes">
+                                <input id="barra_pesquisa_cve" class="form-control form-control-sm me-2 d-flex col-12 col-sm-9 col-md-11" type="search" placeholder="Exemplo: CVE-2022-2153"
                                     aria-label="pesquisar">
-                                <button class="btn btn-primary me-2" onclick="getCVE()">Pesquisar</button>
+                                <button class="btn btn-primary me-2 d-flex justify-content-center col-10 col-sm-7 col-md-3" id="botao_pesquisar" onclick="getCVE()">Pesquisar</button>
                             </div>
                         </div>
 
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-around" id="cards_outras_informacoes">
                         <div class="card" style="width: 16rem;">
                             <img src="./assets/img/cve.png" class="card-img-top img-fluid card-img"
                                 alt="Imagem de um cadeado aberto para simbolizar as vulnerabilidades abordadas nos CVE's">

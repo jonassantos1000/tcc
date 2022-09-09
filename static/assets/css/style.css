@@ -1,83 +1,139 @@
-body{
-    min-height: 100vh;
+body {
+  min-height: 100vh;
 }
 
-.card-img{
-    height: 150px;
-    width: 317px;
+.card-img {
+  height: 150px;
+  width: 317px;
 }
 
-.div-superior{
-    padding-top: 80px;
-    min-height: 200px;
-    min-width: 400px;
-    flex-grow: 1;
+.div-superior {
+  padding-top: 80px;
+  min-height: 200px;
+  min-width: 400px;
+  flex-grow: 1;
 }
 
-.div_root{
-    font-family: 'Lato', sans-serif;
-    font-weight: 20px;
+.div_root {
+  font-family: "Lato", sans-serif;
+  font-weight: 20px;
 }
 
 .elementToFadeInAndOut {
-    animation: fade 1s;
+  animation: fade 1s;
 }
 
-footer{
-    background-color: #084598;
+footer {
+  background-color: #084598;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 #loading {
-    padding-top: 10px;
-    width: 2rem;
-    height: 2rem;
-    border: 5px solid #f3f3f3;
-    border-top: 6px solid #084598;
-    border-radius: 100%;
-    margin: auto;
-    visibility: hidden;
-    animation: spin 1s infinite linear;
+  padding-top: 10px;
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #084598;
+  border-radius: 100%;
+  margin: auto;
+  visibility: hidden;
+  animation: spin 1s infinite linear;
 }
 
 #loading.display {
-    visibility: visible;
+  visibility: visible;
 }
 
 .logo {
-    height: 45px;
-    width: 45px;
+  height: 45px;
+  width: 45px;
 }
 
 .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
-.navbar{
-    background-color: #084598;
+.navbar {
+  background-color: #084598;
 }
 
-.nav-link{
-    color: white;
+.nav-link {
+  color: white;
 }
 
 @keyframes fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .div_root {
+    font-size: 15 px;
+  }
+  
+  .logo{
+    display: none;
+  }
+
+  #lista_nav {
+    display: flex;
+  }
+
+  #botoes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #barra_pesquisa_cve {
+    width: 50 px;
+  }
+
+  #cards_outras_informacoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    position: relative;
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 0 px;
+  }
+
+  .navbar-nav {
+    display: flex;
+  }
+}
+
+
+
+@media screen and (min-width: 980px) {
+  #lista_nav {
+    display: flex;
+    justify-content: center;
+  }
 }
