@@ -1,8 +1,33 @@
+.card-img{
+    height: 150px;
+    width: 317px;
+}
+
+.div-superior{
+    padding-top: 80px;
+    min-height: 100px;
+    min-width: 500px
+}
+
+.div_root{
+    font-family: 'Lato', sans-serif;
+}
+
+.elementToFadeInAndOut {
+    animation: fade 1s;
+}
+
+footer{
+    background-color: #084598;
+}
+
 html {
     scroll-behavior: smooth;
 }
-.div_root{
-    padding-top: 120px;
+
+.logo {
+    height: 45px;
+    width: 45px;
 }
 
 .menu {
@@ -13,34 +38,13 @@ html {
     z-index: 1;
 }
 
-footer{
-    background-color: #536c8d;
-    width: 100%;
-}
-
-.logo {
-    height: 45px;
-    width: 45px;
-}
-
-.card-img{
-    height: 150px;
-    width: 317px;
-}
-
 .navbar{
     background-color: #084598;
 }
 
 .nav-link{
     color: white;
-    font-family: 'Varela Round', sans-serif;
 }
-
-.elementToFadeInAndOut {
-    animation: fade 1s;
-}
-
 
 @keyframes fade {
     0% { opacity: 0; }

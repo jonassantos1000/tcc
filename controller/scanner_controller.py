@@ -15,6 +15,6 @@ def findById(cve):
         return json.dumps(scanner), 200
     return json.dumps(dict(response='CVE não encontrado', status=400)), 400
 
-@app.route('/home', methods=['GET'])
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
