@@ -45,6 +45,13 @@ function hideLoading() {
 function getCVE(){
     displayLoading()
 
+    if (!getValueSearchBar()){
+        hideLoading()
+        dataset = {response: 'Informação pendente', description: "É necessario informar um CVE para prosseguir com a consulta."}
+        exibirErro(dataset)
+        return
+    }
+
     fetch(`http://192.168.1.220:5000/vistoria/${getValueSearchBar()}`)
     .then(response => {
         hideLoading()
@@ -59,7 +66,7 @@ function getCVE(){
     })
     .catch(function(error) {
         hideLoading()
-        dataset = {response: 'Problema de conexão', description: 'Não foi possivel se conectar ao servidor'}
+        dataset = {response: 'Ocorreu um erro', description: error.message}
         exibirErro(dataset)
     });
 }
