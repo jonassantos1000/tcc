@@ -18,3 +18,7 @@ def findById(cve):
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
+
+@app.route('/vistoria', methods=['GET'])
+def vistoria():
+    return render_template('vistoria.html')
