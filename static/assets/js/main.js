@@ -58,23 +58,14 @@ function getCVE() {
       .then((dataset) => {
         hideLoading();
         if (dataset.ok) {
-          dataset.json().then((dataset) => {
-            exibirCVE(dataset);
-          });
+          dataset.json().then((dataset) => {exibirCVE(dataset);});
         } else {
-          response
-            .json()
-            .then((dataset) =>
-              exibirErro("Insira um CVE válido!", dataset.response)
-            );
+          response.json().then((dataset) => exibirErro("Insira um CVE válido!", dataset.response));
         }
       })
       .catch(function (error) {
         hideLoading();
-        return exibirErro(
-          "Erro de conexão",
-          "Não foi possivel se conectar ao servidor"
-        );
+        return exibirErro("Erro de conexão", "Não foi possivel se conectar ao servidor");
       });
   }
 }
