@@ -5,7 +5,7 @@ from model.score import Score
 
 class ScannerService:
     def find_info_by_cve(self, cve):
-        scanner = Scanner('127.0.0.1')
+        scanner = Scanner()
         return self._popular_cve(scanner.find_info_cve(cve))
 
     def _popular_cve(self, dataset):

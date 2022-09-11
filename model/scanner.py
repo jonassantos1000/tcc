@@ -8,8 +8,7 @@ from model.cve import *
 
 class Scanner:
 
-    def __init__(self, network):
-        print("Iniciando PortScan")
+    def __init__(self, network=None):
         self._network = network
         self._list_content_host = []
         self._nmap = nmap.PortScanner()
