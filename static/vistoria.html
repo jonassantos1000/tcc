@@ -2,102 +2,164 @@
 <html lang="PT-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vistoria - CVE</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vistoria - CVE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <div class="d-flex vh-100 flex-column div_root">
-        <header class="d-flex justify-content-center w-100">
-            <nav class="navbar navbar-expand-lg shadow-sm p-1 mb-1 rounded menu">
-                <div class="d-flex container-fluid">
-                    <a class="d-flex col-1 navbar-brand align-items-center" href="/" id="div_logo"><img class="logo" src="./assets/img/logo.png"
-                            alt="Logo do site"></a>
-                    <div class="d-flex h-100 align-items-center justify-content-center  col-9 col-md-11" id="navbarNav">
-                        <ul class="d-flex h-100 pt-2 list-unstyled col-11 col-md-11 align-items-center" id="lista_nav">
-                            <li class="nav-item ps-4">
-                                <a class="nav-link" href="/">Inicio</a>
-                            </li>
-                            <li class="nav-item ps-4">
-                                <a class="nav-link" href="/vistoria">Vistoria</a>
-                            </li>
-                            <li class="nav-item ps-4">
-                                <a class="nav-link" href="#">Sobre</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+  <div class="d-flex vh-100 flex-column div_root">
+    <header class="d-flex justify-content-center w-100">
+      <nav class="navbar navbar-expand-lg shadow-sm p-1 mb-1 rounded menu">
+        <div class="d-flex container-fluid">
+          <a class="d-flex col-1 navbar-brand align-items-center" href="/" id="div_logo"><img class="logo"
+              src="./assets/img/logo.png" alt="Logo do site"></a>
+          <div class="d-flex h-100 align-items-center justify-content-center  col-9 col-md-11" id="navbarNav">
+            <ul class="d-flex h-100 pt-2 list-unstyled col-11 col-md-11 align-items-center" id="lista_nav">
+              <li class="nav-item ps-4">
+                <a class="nav-link" href="/">Inicio</a>
+              </li>
+              <li class="nav-item ps-4">
+                <a class="nav-link" href="/vistoria">Vistoria</a>
+              </li>
+              <li class="nav-item ps-4">
+                <a class="nav-link" href="#">Sobre</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <main class="container flex-grow-1 mt-5">
-            <section class="d-flex flex-column title pt-4 d-flex align-items-center justify-content-center">
-                <h1 class="fs-3 fw-bold mb-4">Inspeção de rede</h1>
+    <main class="container flex-grow-1 mt-5">
+      <section class="d-flex flex-column title pt-4 d-flex align-items-center justify-content-center">
+        <h1 class="fs-3 fw-bold mb-4">Inspeção de rede</h1>
+        <P class="fw-bold">Informe a mascara de rede / ip do host desejado</P>
 
-                <div class="d-flex justify-content-center" id="botoes">
-                    <input id="barra_inspecao" class="form-control col-8 me-2" type="search" placeholder="Exemplo: 192.168.1.0/24"
-                        aria-label="inspecao">
-                    <button class="btn btn-primary me-2 d-flex justify-content-center col-7 col-sm-4 col-md-3" id="botao_inspecao" onclick="">Iniciar</button>
-                </div>
-            </section>
+        <div class="d-flex justify-content-center" id="botoes">
+          <input id="barra_inspecao" class="form-control col-8 me-2" type="search" placeholder="Exemplo: 192.168.1.0/24"
+            aria-label="inspecao">
+          <button class="btn btn-primary me-2 d-flex justify-content-center col-7 col-sm-4 col-md-3" id="botao_inspecao"
+            onclick="">Iniciar</button>
+        </div>
+      </section>
 
 
-            <h2 class="d-flex fs-3 justify-content-center fw-bold mt-5">Relatório da inspeção</h2>
+      <h2 class="d-flex fs-3 justify-content-center fw-bold mt-5">Relatório da inspeção</h2>
 
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        HOST: LUCAS-VM-APACHE - IP: 192.168.1.220
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        HOST: RAFAEL-VM-SQL - IP: 192.168.1.112
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        HOST: ALVARO-VM-C - IP: 192.168.1.112
-                    </button>
-                  </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
+      <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              HOST: LUCAS-VM-APACHE - IP: 192.168.1.220
+            </button>
+          </h2>
+
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="alert alert-primary">
+                <p>Não foi encontrado inconformidades de aplicações neste host com base no banco de dados do NVD</p>
               </div>
-        </main>
+            </div>
+          </div>
 
-        <footer class="p-2">
-            <p class="text-center text-light m-0">Direitos Autorais reservados</p>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-            crossorigin="anonymous"></script>
-    </div>
+        </div>
+
+        <div class="accordion-item">
+
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              HOST: RAFAEL-VM-SQL - IP: 192.168.1.112
+            </button>
+          </h2>
+
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+
+            <div class="accordion-body">
+              <div class="card alert alert-danger">
+                <h3 class="fs-6"><span class="fw-bold">Porta: </span>5500</h3>
+                <h4 class="fs-6"><span class="fw-bold">CVE: </span>CVE-2022-2153</h4>
+                <h5 class="fs-6"><span class="fw-bold">Nivel de severidade: </span>MEDIUM</h5>
+                <h5 class="fs-6"><span class="fw-bold">Pontuação de impacto: </span>4.6 / 10 </h5>
+                <p class="fs-7"><span class="fw-bold">Detalhe: </span>A flaw was found in the Linux kernel’s KVM when
+                  attempting to set a SynIC IRQ. This issue makes it possible for a misbehaving VMM to write to
+                  SYNIC/STIMER MSRs, causing a NULL pointer dereference. This flaw allows an unprivileged local attacker
+                  on the host to issue specific ioctl calls, causing a kernel oops condition that results in a denial of
+                  service.</p>
+
+                <ul class="fs-6 list-unstyled"><span class="fw-bold">Referencias: </span>
+                  <li><a
+                      href="https://bugzilla.redhat.com/show_bug.cgi?id=2069736">https://bugzilla.redhat.com/show_bug.cgi?id=2069736</a>
+                  </li>
+                  <li><a
+                      href="https://www.openwall.com/lists/oss-security/2022/06/22/1">https://www.openwall.com/lists/oss-security/2022/06/22/1</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              HOST: ALVARO-VM-C - IP: 192.168.1.112
+            </button>
+          </h2>
+
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+
+            <div class="accordion-body">
+              <div class="card alert alert-danger">
+                <h3 class="fs-6"><span class="fw-bold">Porta: </span>445</h3>
+                <h4 class="fs-6"><span class="fw-bold">CVE: </span>CVE-2022-39135</h4>
+                <h5 class="fs-6"><span class="fw-bold">Nivel de severidade: </span>CRITICAL</h5>
+                <h5 class="fs-6"><span class="fw-bold">Pontuação de impacto: </span>9.8 / 10 </h5>
+                <p class="fs-7"><span class="fw-bold">Detalhe: </span>In Apache Calcite prior to version 1.32.0 the SQL
+                  operators EXISTS_NODE, EXTRACT_XML, XML_TRANSFORM and EXTRACT_VALUE do not restrict XML External
+                  Entity references in their configuration, which makes them vulnerable to a potential XML External
+                  Entity (XXE) attack. Therefore any client exposing these operators, typically by using Oracle dialect
+                  (the first three) or MySQL dialect (the last one), is affected by this vulnerability (the extent of it
+                  will depend on the user under which the application is running). From Apache Calcite 1.32.0 onwards,
+                  Document Type Declarations and XML External Entity resolution are disabled on the impacted operators.
+                </p>
+
+                <ul class="fs-6 list-unstyled"><span class="fw-bold">Referencias: </span>
+                  <li><a
+                      href="https://lists.apache.org/thread/ohdnhlgm6jvt3srw8l7spkm2d5vwm082">https://lists.apache.org/thread/ohdnhlgm6jvt3srw8l7spkm2d5vwm082</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="p-2">
+      <p class="text-center text-light m-0">Direitos Autorais reservados</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+  </div>
 </body>
+
 </html>
