@@ -26,6 +26,7 @@ function exibirErro(titulo, descricao) {
   resumo_cve.innerHTML = descricao;
   titulo_cve.innerHTML = titulo;
 }
+
 function getValueSearchBar() {
   return document.querySelector("#barra_pesquisa_cve").value;
 }
@@ -60,7 +61,7 @@ function getCVE() {
         if (dataset.ok) {
           dataset.json().then((dataset) => {exibirCVE(dataset);});
         } else {
-          response.json().then((dataset) => exibirErro("Insira um CVE válido!", dataset.response));
+          dataset.json().then((dataset) => {exibirErro("Insira um CVE válido!", dataset.response);});
         }
       })
       .catch(function (error) {

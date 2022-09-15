@@ -185,6 +185,11 @@ html {
 
 
 @media screen and (min-width: 1001px) {
+  #botoes{
+    display: flex;
+    justify-content: space-around;
+  }
+
   #lista_nav {
     display: flex;
     justify-content: center;
