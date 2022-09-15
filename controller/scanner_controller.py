@@ -22,3 +22,7 @@ def index():
 @app.route('/vistoria', methods=['GET'])
 def vistoria():
     return render_template('vistoria.html')
+
+@app.route('/vistoria/scanner/<ip>', methods=['GET'])
+def vistoria_scanner(ip):
+    return json.dumps(service.scanner_rede(ip)), 200

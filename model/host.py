@@ -18,6 +18,10 @@ class Host:
     def port(self):
         return self._port
 
+    @port.setter
+    def port(self, portas):
+        self._port = portas
+
     def dict(self):
         host= {}
         for key in self.__dict__:

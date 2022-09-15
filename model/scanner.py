@@ -51,16 +51,16 @@ class Scanner:
 
     def get_cve_from_hosts(self):
         for host in self._list_content_host:
-            for port in host.port:
-                if port.cpe:
-                    port.list_cve = self.find_cve_by_cpe(port.cpe, port.name)
+            for port in host.get('port'):
+                if port.get('cpe'):
+                    port['list_cve'] = self.find_cve_by_cpe(port['cpe'], port['name'])
 
-                if not port.list_cve:
-                    port.list_cve = self.find_cve_by_product(port.name)
+                # if not port.list_cve:
+                #     port.list_cve = self.find_cve_by_product(port.name)
 
-                if port.list_cve:
+                if port.get('list_cve'):
                     list_cve = []
-                    for cve in port.list_cve:
+                    for cve in port.get('list_cve'):
                         dataset = self.find_info_cve(cve.id)
                         if dataset:
                             exploit = None
@@ -72,9 +72,10 @@ class Scanner:
                             list_references = [conteudo.url for conteudo in dataset.cve.references.reference_data]
                             cve_completo = CVE(id=cve.id, resume=dataset.cve.description.description_data[0].value
                                                , reference=list_references, score=score).dict()
+
                             list_cve.append(cve_completo)
-                        sleep(3)
-                    port.list_cve = list_cve
+                        sleep(6)
+                    port['list_cve'] = list_cve
 
 
     def vulnerabilitie_network(self):
@@ -95,18 +96,20 @@ class Scanner:
                         dataset['tcp'][porta]['version'],
                         dataset['tcp'][porta]['cpe']
                         )
-            list_port.append(port)
+            list_port.append(port.dict())
 
         host = Host(dataset['hostnames'][0]['name'],
                     dataset['addresses']['ipv4'],
                     list_port)
 
-        return host
+        return host.dict()
 
 
-# scan = Scanner('192.168.1.0/24')
-# hosts = scan.vulnerabilitie_network()
-#
-# for host in hosts:
-#      for port in host.port:
-#         print(f'ip:{host.ip} / hostname: {host.hostname} portas: {port.dict()}')
+#scan = Scanner('192.168.1.189')
+#hosts = scan.vulnerabilitie_network()
+#print(hosts)
+
+#for host in hosts:
+#    for port in host.port:
+ #       port = port.dict()
+ #   print(host.dict())
