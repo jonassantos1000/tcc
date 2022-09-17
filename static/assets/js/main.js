@@ -13,6 +13,7 @@ function exibirCVE(dataset) {
   titulo_cve.innerHTML = dataset.id;
   resumo_cve.innerHTML = dataset.resume;
 }
+
 function exibirErro(titulo, descricao) {
   document.querySelector("#cve").classList.add("d-none");
 
@@ -27,21 +28,22 @@ function exibirErro(titulo, descricao) {
   titulo_cve.innerHTML = titulo;
 }
 
-function getValueSearchBar() {
-  return document.querySelector("#barra_pesquisa_cve").value;
+function getValueSearchBar(idBarraPesquisa) {
+  return document.querySelector(idBarraPesquisa).value;
 }
 
 function displayLoading() {
-  loader.classList.add("display");
+  loader.classList.remove('d-none');
+  loader.classList.add("d-flex");
 }
 
 function hideLoading() {
-  loader.classList.remove("d-none");
-  loader.classList.remove("display");
+  loader.classList.add('d-none');
+  loader.classList.remove("d-flex");
 }
 
 function cveEhValido() {
-  if (!getValueSearchBar()) {
+  if (!getValueSearchBar("#barra_pesquisa_cve")) {
     hideLoading();
     exibirErro(
       "Informação pendente",
@@ -55,7 +57,7 @@ function cveEhValido() {
 function getCVE() {
   if (cveEhValido()) {
     displayLoading();
-    fetch(`http://192.168.1.220:5000/vistoria/${getValueSearchBar()}`)
+    fetch(`http://192.168.1.220:5000/vistoria/${getValueSearchBar("#barra_pesquisa_cve")}`)
       .then((dataset) => {
         hideLoading();
         if (dataset.ok) {
@@ -70,3 +72,5 @@ function getCVE() {
       });
   }
 }
+
+

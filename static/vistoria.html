@@ -47,9 +47,21 @@
           <input id="barra_inspecao" class="form-control col-8 me-2" type="search" placeholder="Exemplo: 192.168.1.0/24"
             aria-label="inspecao">
           <button class="btn btn-primary me-2 d-flex justify-content-center col-7 col-sm-4 col-md-3" id="botao_inspecao"
-            onclick="">Iniciar</button>
+            onclick="getVistoriaRede()">Iniciar</button>
+        </div>
+        
+        <img id="loading" class="d-none" src="./assets/img/Loading.gif" alt="">
+        
+        <div id="div_erro" class="d-none justify-content-center col-7 elementToFadeInAndOut p-1" >
+          <div class="jumbotron text-justify p-1 col-12">
+              <div class="alert alert-danger">
+                  <h3 class="fs-5" id="titulo_erro"></h3>
+                  <p class="lead fs-6" id="resumo_erro"></p>
+              </div>
+          </div>
         </div>
       </section>
+
 
 
       <h2 class="d-flex fs-3 justify-content-center fw-bold mt-5">Relatório da inspeção</h2>
@@ -159,6 +171,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/vistoria_rede.js"></script>
   </div>
 </body>
 
