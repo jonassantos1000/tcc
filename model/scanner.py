@@ -55,8 +55,8 @@ class Scanner:
                 if port.get('cpe'):
                     port['list_cve'] = self.find_cve_by_cpe(port['cpe'], port['name'])
 
-                if not port['list_cve']:
-                    port['list_cve'] = self.find_cve_by_product(port['name'])
+                #if not port['list_cve']:
+                    #port['list_cve'] = self.find_cve_by_product(port['name'])
 
                 if port.get('list_cve'):
                     list_cve = []
@@ -74,7 +74,7 @@ class Scanner:
                                                , reference=list_references, score=score).dict()
 
                             list_cve.append(cve_completo)
-                        sleep(6)
+                        sleep(7)
                     port['list_cve'] = list_cve
 
 

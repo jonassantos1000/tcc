@@ -25,5 +25,4 @@ def vistoria():
 
 @app.route('/vistoria/scanner/<ip>', methods=['GET'])
 def vistoria_scanner(ip):
-    print(ip.replace("barra", "/"))
     return json.dumps(service.scanner_rede(ip.replace("barra", "/"))), 200

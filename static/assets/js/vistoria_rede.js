@@ -4,12 +4,12 @@ function getVistoriaRede() {
     if (valida_rede_informada()) {
         fetch(`http://192.168.1.220:5000/vistoria/scanner/${getValueSearchBar("#barra_inspecao").replace("/", "barra")}`)
             .then((dataset) => {
-                dataset.json()
-                    .then((dataset) => {
-                        hideLoading()
-                        console.log(dataset)
-                        popularRelatorio(dataset)
-                    });
+                hideLoading();
+                if (dataset.ok) {
+                    dataset.json().then((dataset) => {popularRelatorio(dataset)})
+                }else {
+                    dataset.json().then(exibirErroVistoria("Ops, aconteceu um erro inesperado...", "Parece que tivemos uma oscilação na rede, tente novamente !"))
+                }
             })
             .catch(function (error) {
                 hideLoading();
@@ -79,8 +79,8 @@ function popularRelatorio(dataset){
                                             
                         porta.innerHTML = `<span class="fw-bold">Porta: </span> ${element.porta}`
                         cve.innerHTML = `<span class="fw-bold">CVE: </span> ${port.id}`
-                        severidade.innerHTML = `<span class="fw-bold">Nivel de severidade: </span> ${port.score.severity}`
-                        impacto.innerHTML = `<span class="fw-bold">Pontuação de impacto: </span> ${port.score.impact_score}`
+                        severidade.innerHTML = `<span class="fw-bold">Nivel de severidade: </span> ${coalesce(port.score.severity)}`
+                        impacto.innerHTML = `<span class="fw-bold">Pontuação de impacto: </span> ${coalesce(port.score.impact_score)}`
                         detalhe.innerHTML = `<span class="fw-bold">Detalhe: </span> ${port.resume}`
                         referencias.innerHTML = `<span class="fw-bold">Referencias: </span> `
                         port.reference.forEach(referencia => {
@@ -152,4 +152,9 @@ function removerErro() {
     let div_erro = document.querySelector("#div_erro");
     div_erro.classList.remove("d-flex");
     div_erro.classList.add("d-none");
+}
+
+function coalesce(dados){
+    dados = dados == undefined ? "N/A" : dados;
+    return dados
 }
