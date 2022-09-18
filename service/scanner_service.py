@@ -9,7 +9,7 @@ class ScannerService:
         return self._popular_cve(scanner.find_info_cve(cve))
 
     def scanner_rede(self, ip):
-        scan = Scanner('192.168.1.189')
+        scan = Scanner(ip)
         result = scan.vulnerabilitie_network()
         return result
 

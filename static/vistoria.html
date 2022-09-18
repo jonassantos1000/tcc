@@ -50,120 +50,26 @@
           <button class="btn btn-primary me-2 d-flex justify-content-center col-7 col-sm-4 col-md-3" id="botao_inspecao"
             onclick="getVistoriaRede()">Iniciar</button>
         </div>
-        
+
         <img id="loading" class="d-none" src="./assets/img/Loading.gif" alt="">
-        
-        <div id="div_erro" class="d-none justify-content-center col-7 elementToFadeInAndOut p-1" >
+
+        <div id="div_erro" class="d-none justify-content-center col-7 elementToFadeInAndOut p-1">
           <div class="jumbotron text-justify p-1 col-12">
-              <div class="alert alert-danger">
-                  <h3 class="fs-5" id="titulo_erro"></h3>
-                  <p class="lead fs-6" id="resumo_erro"></p>
-              </div>
+            <div class="alert alert-danger">
+              <h3 class="fs-5" id="titulo_erro"></h3>
+              <p class="lead fs-6" id="resumo_erro"></p>
+            </div>
           </div>
         </div>
       </section>
 
-
-
-      <h2 class="d-flex fs-3 justify-content-center fw-bold mt-5">Relatório da inspeção</h2>
-
-      <div class="accordion" id="accordionExample">
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              HOST: LUCAS-VM-APACHE - IP: 192.168.1.220
-            </button>
-          </h2>
-
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="alert alert-primary">
-                <p>Não foi encontrado inconformidades de aplicações neste host com base no banco de dados do NVD</p>
-              </div>
-            </div>
-          </div>
+      <section>
+        <h2 id="titulo-relatorio" class="d-flex invisible fs-3 justify-content-center fw-bold mt-5">Relatório da inspeção</h2>
+        <div class="accordion" id="accordion-pai">
 
         </div>
 
-        <div class="accordion-item">
-
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              HOST: RAFAEL-VM-SQL - IP: 192.168.1.112
-            </button>
-          </h2>
-
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample">
-
-            <div class="accordion-body">
-              <div class="card alert alert-danger">
-                <h3 class="fs-6"><span class="fw-bold">Porta: </span>5500</h3>
-                <h4 class="fs-6"><span class="fw-bold">CVE: </span>CVE-2022-2153</h4>
-                <h5 class="fs-6"><span class="fw-bold">Nivel de severidade: </span>MEDIUM</h5>
-                <h5 class="fs-6"><span class="fw-bold">Pontuação de impacto: </span>4.6 / 10 </h5>
-                <p class="fs-7"><span class="fw-bold">Detalhe: </span>A flaw was found in the Linux kernel’s KVM when
-                  attempting to set a SynIC IRQ. This issue makes it possible for a misbehaving VMM to write to
-                  SYNIC/STIMER MSRs, causing a NULL pointer dereference. This flaw allows an unprivileged local attacker
-                  on the host to issue specific ioctl calls, causing a kernel oops condition that results in a denial of
-                  service.</p>
-
-                <ul class="fs-6 list-unstyled"><span class="fw-bold">Referencias: </span>
-                  <li><a
-                      href="https://bugzilla.redhat.com/show_bug.cgi?id=2069736">https://bugzilla.redhat.com/show_bug.cgi?id=2069736</a>
-                  </li>
-                  <li><a
-                      href="https://www.openwall.com/lists/oss-security/2022/06/22/1">https://www.openwall.com/lists/oss-security/2022/06/22/1</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              HOST: ALVARO-VM-C - IP: 192.168.1.112
-            </button>
-          </h2>
-
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#accordionExample">
-
-            <div class="accordion-body">
-              <div class="card alert alert-danger">
-                <h3 class="fs-6"><span class="fw-bold">Porta: </span>445</h3>
-                <h4 class="fs-6"><span class="fw-bold">CVE: </span>CVE-2022-39135</h4>
-                <h5 class="fs-6"><span class="fw-bold">Nivel de severidade: </span>CRITICAL</h5>
-                <h5 class="fs-6"><span class="fw-bold">Pontuação de impacto: </span>9.8 / 10 </h5>
-                <p class="fs-7"><span class="fw-bold">Detalhe: </span>In Apache Calcite prior to version 1.32.0 the SQL
-                  operators EXISTS_NODE, EXTRACT_XML, XML_TRANSFORM and EXTRACT_VALUE do not restrict XML External
-                  Entity references in their configuration, which makes them vulnerable to a potential XML External
-                  Entity (XXE) attack. Therefore any client exposing these operators, typically by using Oracle dialect
-                  (the first three) or MySQL dialect (the last one), is affected by this vulnerability (the extent of it
-                  will depend on the user under which the application is running). From Apache Calcite 1.32.0 onwards,
-                  Document Type Declarations and XML External Entity resolution are disabled on the impacted operators.
-                </p>
-
-                <ul class="fs-6 list-unstyled"><span class="fw-bold">Referencias: </span>
-                  <li><a
-                      href="https://lists.apache.org/thread/ohdnhlgm6jvt3srw8l7spkm2d5vwm082">https://lists.apache.org/thread/ohdnhlgm6jvt3srw8l7spkm2d5vwm082</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
+      </section>
     </main>
 
     <footer class="p-2">

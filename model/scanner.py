@@ -55,8 +55,8 @@ class Scanner:
                 if port.get('cpe'):
                     port['list_cve'] = self.find_cve_by_cpe(port['cpe'], port['name'])
 
-                #if not port['list_cve']:
-                    #port['list_cve'] = self.find_cve_by_product(port['name'])
+                if not port['list_cve']:
+                    port['list_cve'] = self.find_cve_by_product(port['name'])
 
                 if port.get('list_cve'):
                     list_cve = []
@@ -105,7 +105,7 @@ class Scanner:
         return host.dict()
 
 
-#scan = Scanner('192.168.1.189')
+#scan = Scanner('192.168.1.0/24')
 #hosts = scan.vulnerabilitie_network()
 #print(hosts)
 
