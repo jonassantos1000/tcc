@@ -34,11 +34,14 @@ class Scanner:
 
 
     def find_cve_by_product(self, product):
-        dataset = nvdlib.searchCVE(keyword=f'{product}', limit=2)
+        sleep(6)
+        print('product: '+product)
+        dataset = nvdlib.searchCVE(keyword=product, limit=2)
         list_cve = []
         if dataset:
             for result in dataset:
                 list_cve.append(CVE(id=result.cve.CVE_data_meta.ID))
+
         return list_cve
 
 

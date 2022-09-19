@@ -33,7 +33,6 @@ function popularRelatorio(dataset){
         divAccordionBody = document.createElement('div')
         tituloAccordion = document.createElement('h2')
         botaoAccordion = document.createElement('button')
-        alerta = document.createElement('div')
 
         idAccordions = 'accordion' + cont
         tituloAccordion.id = 'heading' + cont
@@ -61,7 +60,7 @@ function popularRelatorio(dataset){
             element.port.forEach(element => {
                 if (element.list_cve.length != 0){
                     element.list_cve.forEach(port => {
-
+                        alerta = document.createElement('div')
                         porta = document.createElement('h3')
                         cve = document.createElement('h4')
                         severidade = document.createElement('h5')
@@ -89,7 +88,8 @@ function popularRelatorio(dataset){
 
                             linkItem.href= referencia
                             linkItem.innerHTML = referencia
-                            referencias.append(linkItem)
+                            itemLista.append(linkItem)
+                            referencias.append(itemLista)
                         })
                         
                         alerta.append(porta)
@@ -104,6 +104,7 @@ function popularRelatorio(dataset){
             });
 
         }else{
+            alerta = document.createElement('div')
             descricao = document.createElement('p')
 
             descricao.innerHTML = 'Não foi encontrado inconformidades de aplicações neste host com base no banco de dados do NVD'
