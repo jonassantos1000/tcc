@@ -22,7 +22,7 @@ class Scanner:
 
     def find_cve_by_cpe(self, info_cpe, name):
         try:
-            dataset = nvdlib.searchCPE(cpeMatchString=info_cpe, keyword=name, cves=True)
+            dataset = nvdlib.searchCPE(cpeMatchString=info_cpe, keyword=name, cves=True, key='2dac879e-d189-4424-9378-ea4e4e06d283')
             list_cve = []
             for result in dataset:
                 for vulnerabilite in result.vulnerabilities:
@@ -48,7 +48,7 @@ class Scanner:
     def find_info_cve(self, cve):
         try:
             if str(cve).upper().find('CVE') != -1:
-                return nvdlib.getCVE(cve)
+                return nvdlib.getCVE(cve, key='2dac879e-d189-4424-9378-ea4e4e06d283')
         except Exception as error:
             return False
 
