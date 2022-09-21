@@ -20,14 +20,14 @@ class Scanner:
                 self._list_content_host.append(self._popular_objeto(dataset[host]))
         return self._list_content_host
 
-    def find_cve_by_cpe(self, info_cpe, name):
+    def find_cve_by_cpe(self, info_cpe, product):
         try:
-            dataset = nvdlib.searchCPE(cpeMatchString=info_cpe, keyword=name, cves=True, key='2dac879e-d189-4424-9378-ea4e4e06d283')
+            dataset = nvdlib.searchCPE(cpeMatchString=info_cpe, keyword=product, cves=True, key='2dac879e-d189-4424-9378-ea4e4e06d283')
             list_cve = []
             for result in dataset:
                 for vulnerabilite in result.vulnerabilities:
                     list_cve.append(CVE(id=vulnerabilite))
-            sleep(6)
+            sleep(1)
             return list_cve[len(list_cve)-2:]
         except Exception as error:
             return []
@@ -56,7 +56,7 @@ class Scanner:
         for host in self._list_content_host:
             for port in host.get('port'):
                 if port.get('cpe'):
-                    port['list_cve'] = self.find_cve_by_cpe(port['cpe'], port['name'])
+                    port['list_cve'] = self.find_cve_by_cpe(port['cpe'], port['product'])
 
                 #if not port['list_cve']:
                     #port['list_cve'] = self.find_cve_by_product(port['name'])
