@@ -1,8 +1,8 @@
 function getVistoriaRede() {
     displayLoading();
-    removerErro()
+    resetarLayout()
     if (valida_rede_informada()) {
-        fetch(`http://192.168.1.220:5000/vistoria/scanner/${getValueSearchBar("#barra_inspecao").replace("/", "barra")}`)
+        fetch(`http://${server}:5000/vistoria/scanner/${getValueSearchBar("#barra_inspecao").replace("/", "barra")}`)
             .then((dataset) => {
                 hideLoading();
                 if (dataset.ok) {
@@ -158,4 +158,9 @@ function removerErro() {
 function coalesce(dados){
     dados = dados == undefined ? "N/A" : dados;
     return dados
+}
+
+function resetarLayout(){
+    removerErro()
+    document.querySelector('#accordion-pai').innerText = "";
 }

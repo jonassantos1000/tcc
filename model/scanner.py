@@ -35,7 +35,6 @@ class Scanner:
 
     def find_cve_by_product(self, product):
         sleep(6)
-        print('product: '+product)
         dataset = nvdlib.searchCVE(keyword=product, limit=2)
         list_cve = []
         if dataset:
@@ -77,7 +76,7 @@ class Scanner:
                                                , reference=list_references, score=score).dict()
 
                             list_cve.append(cve_completo)
-                        sleep(7)
+                        sleep(1)
                     port['list_cve'] = list_cve
 
 

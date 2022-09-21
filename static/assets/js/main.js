@@ -1,4 +1,5 @@
 const loader = document.querySelector("#loading");
+const server = "192.168.1.220"
 
 function exibirCVE(dataset) {
   document.querySelector("#div_erro").classList.add("d-none");
@@ -57,7 +58,7 @@ function cveEhValido() {
 function getCVE() {
   if (cveEhValido()) {
     displayLoading();
-    fetch(`http://192.168.1.220:5000/vistoria/${getValueSearchBar("#barra_pesquisa_cve")}`)
+    fetch(`http://${server}:5000/vistoria/${getValueSearchBar("#barra_pesquisa_cve")}`)
       .then((dataset) => {
         hideLoading();
         if (dataset.ok) {
@@ -72,5 +73,3 @@ function getCVE() {
       });
   }
 }
-
-

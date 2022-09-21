@@ -15,7 +15,6 @@ class ScannerService:
 
     def _popular_cve(self, dataset):
         if dataset:
-            print(dataset)
             exploit = None
             if 'v3exploitability' in dir(dataset):
                 exploit = dataset.v3exploitability
