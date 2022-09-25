@@ -78,10 +78,10 @@ function popularRelatorio(dataset){
                                             
                         porta.innerHTML = `<span class="fw-bold">Porta: </span> ${element.porta}`
                         cve.innerHTML = `<span class="fw-bold">CVE: </span> ${port.id}`
-                        severidade.innerHTML = `<span class="fw-bold">Nivel de severidade: </span> ${coalesce(port.score.severity)}`
+                        severidade.innerHTML = `<span class="fw-bold">Nível de severidade: </span> ${coalesce(port.score.severity)}`
                         impacto.innerHTML = `<span class="fw-bold">Pontuação de impacto: </span> ${coalesce(port.score.impact_score)}`
                         detalhe.innerHTML = `<span class="fw-bold">Detalhe: </span> ${port.resume}`
-                        referencias.innerHTML = `<span class="fw-bold">Referencias: </span> `
+                        referencias.innerHTML = `<span class="fw-bold">Referências: </span> `
                         port.reference.forEach(referencia => {
                             itemLista = document.createElement('li')
                             linkItem = document.createElement('a')
