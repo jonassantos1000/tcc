@@ -2,9 +2,39 @@ body {
   min-height: 100vh;
 }
 
+.border-radius-efeito{
+  border-radius: 50px 20px;
+}
+
+.titulo-sobre {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.titulo-principal-sobre {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
 .card-img {
   height: 150px;
   width: 317px;
+}
+
+.cor-branco {
+  background-color: #e6e7f7;
+}
+
+.cor-roxo-claro {
+  color: #604878;
+}
+
+.cor-roxo {
+  color: #301860;
+}
+
+
+.background-roxo {
+  background-color: #301860;
 }
 
 .div-superior {
@@ -21,6 +51,12 @@ body {
 
 .elementToFadeInAndOut {
   animation: fade 1s;
+}
+
+#foto-sobre{
+  position: relative;
+  width: 100px;
+  height: 50px;
 }
 
 footer {
@@ -78,6 +114,10 @@ html {
 
   .logo{
     display: flex;
+  }
+
+  #card-sobre-nos{
+    height: 75%;
   }
 
   #div_superior{
@@ -141,6 +181,10 @@ html {
     align-items: center;
   }
 
+  #card-sobre-nos{
+    height: 75%;
+  }
+
   #botoes {
     display: flex;
     justify-content: center;
@@ -172,6 +216,10 @@ html {
   #botoes{
     display: flex;
     justify-content: space-around;
+  }
+
+  #card-sobre-nos{
+    height: 60%;
   }
 
   #lista_nav {
