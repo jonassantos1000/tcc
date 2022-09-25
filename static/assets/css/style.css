@@ -88,6 +88,10 @@ html {
   color: white;
 }
 
+p {
+  text-indent: 1.5em;
+  margin-top: 0 }
+
 @keyframes fade {
   0% {
     opacity: 0;
@@ -219,7 +223,7 @@ html {
   }
 
   #card-sobre-nos{
-    height: 60%;
+    height: 72%;
   }
 
   #lista_nav {
