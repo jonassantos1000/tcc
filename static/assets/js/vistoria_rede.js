@@ -24,6 +24,7 @@ function getVistoriaRede() {
 function popularRelatorio(dataset){
     divAccordion = document.querySelector('#accordion-pai');
     tituloRelatorio = document.querySelector('#titulo-relatorio');
+    document.querySelector('#download').classList.remove("invisible");
     tituloRelatorio.classList.remove("invisible")
     cont = 1
     
@@ -162,5 +163,43 @@ function coalesce(dados){
 
 function resetarLayout(){
     removerErro()
+    document.querySelector('#download').classList.add("invisible");
+    document.querySelector('#titulo-relatorio').classList.add("invisible");
     document.querySelector('#accordion-pai').innerText = "";
+}
+
+function getDate(){
+    var data = new Date(),
+        dia  = data.getDate().toString(),
+        diaF = (dia.length == 1) ? '0'+dia : dia,
+        mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mesF = (mes.length == 1) ? '0'+mes : mes,
+        anoF = data.getFullYear(),
+        h = data.getHours(),
+        m = data.getMinutes(),
+        s = data.getSeconds();
+    return diaF+"/"+mesF+"/"+anoF+" "+h+":"+m+":"+s;
+}
+
+function gerarPDF(){
+    data = getDate()
+    let report = `
+    <div class='d-flex mt-3 justify-content-between'>
+        <div class='d-flex'>
+            <a class="d-flex col-6 navbar-brand align-items-center me-5" href="/" id="div_logo"><img class="logo-report"
+            src="./assets/img/logo.png" alt="Logo do site"></a>
+            <h1 class="fs-3 fw-bold ms-5 d-flex align-items-center">Report Security</h1>
+        </div>
+        <p class='fs-6 d-flex align-items-center me-3'>${data}</p>
+    </div>`
+    const item = document.querySelector("#relatorio")
+    report = report.concat(item.innerHTML)
+    
+    var opt = {
+        margin: 0,
+        filename: "report_security_"+data+".pdf",
+        html2canvas: { scale: 1 },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+    };
+    html2pdf().set(opt).from(report).save(); 
 }

@@ -6,6 +6,11 @@ body {
   border-radius: 50px 20px;
 }
 
+.botao_download {
+  margin-top: 30px;
+  border: none;
+}
+
 .titulo-sobre {
   font-family: 'Montserrat', sans-serif;
 }
@@ -67,9 +72,23 @@ html {
   scroll-behavior: smooth;
 }
 
+.img-download{
+  height: 50px;
+  width: 50px;
+}
+
+.img-download:hover{
+  padding: 1px;
+}
+
 .logo {
   height: 45px;
   width: 45px;
+}
+
+.logo-report {
+  height: 100px;
+  width: 100px;
 }
 
 .menu {
@@ -88,7 +107,7 @@ html {
   color: white;
 }
 
-p {
+.paragrafo {
   text-indent: 1.5em;
   margin-top: 0 }
 
@@ -120,8 +139,19 @@ p {
     display: flex;
   }
 
+  #logo-sobre{
+    display: none;
+  }
+
   #card-sobre-nos{
-    height: 75%;
+    height: 100%;
+  }
+
+  #container-sobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
   }
 
   #div_superior{
@@ -185,8 +215,15 @@ p {
     align-items: center;
   }
 
+  #botao-saber-mais{
+    width: 100px;
+  }
+
   #card-sobre-nos{
-    height: 75%;
+    height: 100%;
+    min-width: 200px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   #botoes {
@@ -223,7 +260,7 @@ p {
   }
 
   #card-sobre-nos{
-    height: 72%;
+    height: 400px;
   }
 
   #lista_nav {

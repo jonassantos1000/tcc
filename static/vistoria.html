@@ -13,36 +13,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="shortcut icon" href="/assets/img/logo.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
   <div class="d-flex vh-100 flex-column div_root">
     <header class="d-flex justify-content-center w-100">
       <nav class="navbar navbar-expand-lg shadow-sm p-1 mb-1 rounded menu">
-          <div class="d-flex container-fluid">
-              <a class="d-flex col-1 navbar-brand align-items-center" href="/" id="div_logo"><img class="logo"
-                      src="./assets/img/logo.png" alt="Logo do site"></a>
-              <div class="d-flex h-100 align-items-center justify-content-center  col-9 col-md-11" id="navbarNav">
-                  <ul class="d-flex h-100 pt-2 list-unstyled col-11 col-md-11 align-items-center" id="lista_nav">
-                      <li class="nav-item ps-4">
-                          <a class="nav-link" href="/">Inicio</a>
-                      </li>
-                      <li class="nav-item ps-4">
-                          <a class="nav-link" href="/vistoria">Vistoria</a>
-                      </li>
-                      <li class="nav-item ps-4">
-                          <a class="nav-link" href="/sobre">Sobre</a>
-                      </li>
-                  </ul>
-              </div>
+        <div class="d-flex container-fluid">
+          <a class="d-flex col-1 navbar-brand align-items-center" href="/" id="div_logo"><img class="logo"
+              src="./assets/img/logo.png" alt="Logo do site"></a>
+          <div class="d-flex h-100 align-items-center justify-content-center  col-9 col-md-11" id="navbarNav">
+            <ul class="d-flex h-100 pt-2 list-unstyled col-11 col-md-11 align-items-center" id="lista_nav">
+              <li class="nav-item ps-4">
+                <a class="nav-link" href="/">Inicio</a>
+              </li>
+              <li class="nav-item ps-4">
+                <a class="nav-link" href="/vistoria">Vistoria</a>
+              </li>
+              <li class="nav-item ps-4">
+                <a class="nav-link" href="/sobre">Sobre</a>
+              </li>
+            </ul>
           </div>
+        </div>
       </nav>
     </header>
 
     <main class="container flex-grow-1 mt-5">
       <section class="d-flex flex-column title pt-4 d-flex align-items-center justify-content-center">
-        <h1 class="fs-3 fw-bold mb-4">Inspeção de rede</h1>
-        <P class="fw-bold">Informe a mascara de rede / ip do host desejado</P>
+        <h1 class="fs-2 fw-bold pt-3 mb-4">Inspeção de rede</h1>
+        <p class="fw-bold fs-6">Informe a mascara de rede / ip do host desejado</p>
 
         <div class="d-flex justify-content-center" id="botoes">
           <input id="barra_inspecao" class="form-control col-8 me-2" type="search" placeholder="Exemplo: 192.168.1.0/24"
@@ -63,13 +66,17 @@
         </div>
       </section>
 
-      <section>
+      <div id='download' class="col-12 d-flex justify-content-end pe-5 invisible">
+        <button onclick="gerarPDF()" class="botao_download"><img src="./assets/img/btn_download.png"
+            alt="Realizar Download do Relatorio" class="img-fluid img-download"></button>
+      </div>
+
+      <section id="relatorio">
         <h2 id="titulo-relatorio" class="d-flex invisible fs-3 justify-content-center fw-bold mt-5">Relatório da
           inspeção</h2>
         <div class="accordion" id="accordion-pai">
 
         </div>
-
       </section>
     </main>
 
