@@ -193,8 +193,7 @@ function gerarPDF(){
         <p class='fs-6 d-flex align-items-center me-3'>${data}</p>
     </div>`
     const item = document.querySelector("#relatorio")
-    report = report.concat(item.innerHTML)
-    
+    report = report.concat(item.innerHTML).replace('accordion-button', 'accordion-button w-100')
     var opt = {
         margin: 0,
         filename: "report_security_"+data+".pdf",
