@@ -26,3 +26,7 @@ def vistoria():
 @app.route('/vistoria/scanner/<ip>', methods=['GET'])
 def vistoria_scanner(ip):
     return json.dumps(service.scanner_rede(ip.replace("barra", "/"))), 200
+
+@app.route('/sobre', methods=['GET'])
+def sobre():
+    return render_template('sobre.html')
