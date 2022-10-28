@@ -9,6 +9,9 @@ body {
 .botao_download {
   margin-top: 30px;
   border: none;
+  background-color: white;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
 }
 
 .titulo-sobre {

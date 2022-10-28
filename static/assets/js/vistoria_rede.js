@@ -100,6 +100,8 @@ function popularRelatorio(dataset){
                         alerta.append(detalhe)
                         alerta.append(referencias)
                         divAccordionBody.append(alerta)
+
+
                     })
                 }
             });
@@ -183,6 +185,7 @@ function getDate(){
 
 function gerarPDF(){
     data = getDate()
+    window.scrollTo(0,0)
     let report = `
     <div class='d-flex mt-3 justify-content-between'>
         <div class='d-flex'>
@@ -195,10 +198,10 @@ function gerarPDF(){
     const item = document.querySelector("#relatorio")
     report = report.concat(item.innerHTML).replace('accordion-button', 'accordion-button w-100')
     var opt = {
-        margin: 0,
+        margin: [30,30],
         filename: "report_security_"+data+".pdf",
-        html2canvas: { scale: 1 },
-        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        html2canvas:  { scale: 5, letterRendering: true},
+        jsPDF:        { unit: 'pt', format: 'letter', orientation: 'portrait' },
     };
     html2pdf().set(opt).from(report).save(); 
 }
