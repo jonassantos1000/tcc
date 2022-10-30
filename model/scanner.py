@@ -14,7 +14,9 @@ class Scanner:
         self._nmap = nmap.PortScanner()
 
     def info_hosts_network(self):
-        dataset = self._nmap.scan(hosts=self._network, arguments='-T4 -sS -sV')['scan']
+        print('iniciou')
+        dataset = self._nmap.scan(hosts=self._network, arguments='-T5 -sS -sV')['scan']
+        print('acabou')
         for host in dataset:
             if 'tcp' in dataset[host]:
                 self._list_content_host.append(self._popular_objeto(dataset[host]))
