@@ -89,6 +89,8 @@ function popularRelatorio(dataset){
 
                             linkItem.href= referencia
                             linkItem.innerHTML = referencia
+                            linkItem.setAttribute('target', "_blank")
+
                             itemLista.append(linkItem)
                             referencias.append(itemLista)
                         })
@@ -100,8 +102,6 @@ function popularRelatorio(dataset){
                         alerta.append(detalhe)
                         alerta.append(referencias)
                         divAccordionBody.append(alerta)
-
-
                     })
                 }
             });
