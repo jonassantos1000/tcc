@@ -24,7 +24,7 @@ class Server():
                     arquivo.write(linha)
 
     def run(self):
-        self.definir_ip_servidor()
+        #self.definir_ip_servidor()
         self.app.run(debug=True, host='0.0.0.0')
 
 server = Server()
